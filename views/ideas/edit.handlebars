@@ -1,0 +1,21 @@
+{{#each errors}}<!--je parcours le tableau et à chaque erreur, tu affiches le message d'alerte...-->
+        <div class="alert alert-danger">{{text}}</div>
+    {{else}}
+
+{{/each}}
+
+<div class="card card-body">
+    <h3>Modification de l'idée de la vidéo</h3>
+    <form action="/ideas/{{idea.id}}?_method=PUT" method="post"><!--lorsqu'on va faire la méthode post, ce sera le fichier ideas.handlebars qui sera traité-->
+    <input type="hidden" name="_method" value="DELETE">    
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title" value="{{idea.title}}">
+        </div>
+        <div class="form-group">
+            <label for="details">Details</label>
+            <textarea class="form-control" name="details">{{idea.details}}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

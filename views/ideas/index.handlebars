@@ -1,0 +1,16 @@
+{{#each ideas}}
+    <div class="card card-body mb-2">
+        <h4>{{title}}</h4>
+        <p>{{details}}</p>
+        <h6>{{date}}</h6>
+        <a href="/ideas/edit/{{id}}" class="btn btn-dark btn-block mb-2">Modifier</a><!--lorsqu'on clic, il modifiera l'élément spécifié via l'id-->
+
+        {{!-- formulaire de suppression --}}
+        <form action="/ideas/{{id}}?_method=DELETE" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" class="btn btn-danger btn-block mb-2" value="Supprimer">
+        </form>
+    </div>
+    {{else}}
+    <p>Aucunes idées de vidéo présente</p>
+{{/each}}

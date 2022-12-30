@@ -1,0 +1,11 @@
+{{#if error}}
+    <div class="alert alert-danger">{{error}}</div>
+
+{{/if}}
+
+
+{{#each errors}}<!--je parcours le tableau et à chaque erreur, tu affiches le message d'alerte...-->
+        <div class="alert alert-danger">{{text}}</div>
+    {{else}}
+
+{{/each}}
